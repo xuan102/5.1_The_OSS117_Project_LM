@@ -13,21 +13,22 @@
       <p>Auteur : <%= gossip.author %></p>
       <p>Citation : <%= gossip.content %></p>
       <p class="bouton"><a href="/gossips/<%= id.to_i %>/edit/">Editer la citation</a></p>
-
-      <h3>Commentaires sur cette citation :</h3>
-      <% allcomment.each do |comment| %>
-        <p>
-          <% if comment.id == id %>
-            <blockquote>
-              <span><%= comment.content %></span>
-            </blockquote>
-          <% end %>
-        </p>
-      <% end %>
-      <form class="commentaire" action='/gossips/<%= id %>' method='POST'>
-        Balance ton commentaire :  <input class="comminput" type='text' name='comm_content'/><br/>
-        <input type='submit'/>
-      </form>
-      <p class="bouton"><a href="/">Retour accueil</a></p>
+    <hr>
+    <h3>Commentaires sur cette citation :</h3>
+    <% allcomment.each do |comment| %>
+      <p>
+        <% if comment.id == id %>
+          <blockquote>
+            <span><%= comment.content %></span>
+          </blockquote>
+        <% end %>
+      </p>
+    <% end %>
+    <form class="commentaire" action='/gossips/<%= id %>' method='POST'>
+      Balance ton commentaire :  <input class="comminput" type='text' name='comm_content'/><br/>
+      <input type='submit'/>
+    </form>
+    <hr>
+    <p class="bouton"><a href="/">Retour accueil</a></p>
   </body>
 </html>

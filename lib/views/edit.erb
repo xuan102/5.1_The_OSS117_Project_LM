@@ -13,10 +13,11 @@
     
     <p>Modifie la citation via le formulaire ci-dessous</p>
     <form action='/gossips/<%= id.to_i %>/edit/' method='POST'>
-      Edite l'auteur :  <input type='text' name='gossip_edit_author' value="<%= gossip.author%>"/><br/>
-      Edite la citation :  <textarea class="large"type='' name='gossip_edit_content'><%= gossip.content%></textarea>
+      Edite l'auteur :  <input class="comminput" type='text' name='gossip_edit_author' value="<%= gossip.author%>"/><br/>
+      Edite la citation :  <textarea class="comminput"type='' name='gossip_edit_content'><%= gossip.content%></textarea>
       <input type='submit'/>
     </form>
+    <hr>
     <p class="bouton"><a href="/">Retour accueil</a></p>
   </body>
 </html>
