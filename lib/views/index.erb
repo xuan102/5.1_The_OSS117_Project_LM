@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The OSS117 Project</title>
+<link rel="stylesheet" type="text/css" href="<%= url("/css/style.css")%>">
+</head>
+  <body>
+    <header>
+    <a href="/"><img src="/images/header.png" alt="Sacré_Hubert" height="100" width="100"></a>
+    <h1>OSS is magic !</h1>
+    </header>
+    <table>   
+      <tr>
+        <th>Auteur</th>
+        <th>Citation</th>
+        <th></th>
+        <th></th>
+      </tr> 
+      <% gossips.each_with_index do |gossip, index| %>
+        <tr>
+          <td class="auteur"><%= gossip.author %></td>
+          <td class="content"><%= gossip.content %></td>
+          <td class="view"><a href="/gossips/<%= index + 1 %>">Voir</a></td>
+          <td class="view"><a href="/gossips/<%= index + 1 %>/edit/">Editer</a></td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="bouton"><a href="/gossips/new/">Nouvelle citation</a></div><br/>
+  </body>
+</html>
